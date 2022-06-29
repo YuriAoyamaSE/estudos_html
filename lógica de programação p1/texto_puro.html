@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script>
+	//anotação
+	var tanqueCarro = 40;
+	var caminhoComGasolina = 480;
+	var consumoDeGasolina = caminhoComGasolina / tanqueCarro;
+	var caminhoComAlcool = 300;
+	var consumoDeAlcool = caminhoComAlcool / tanqueCarro;
+
+	function pulaLinha(){
+	   	document.write("<br>");
+	}
+
+	function mostraTexto(texto){
+		document.write("<big>"+texto+"</big>");
+		pulaLinha();
+	}
+
+    mostraTexto("Consumo de gasolina: " + consumoDeGasolina + "km/L");
+    mostraTexto("Consumo de álcool: " + consumoDeAlcool + "km/L");
+</script>
+

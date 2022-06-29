@@ -1,0 +1,41 @@
+body{}
+
+.títuloprincipal{ 
+	
+	padding-left: 30px;}
+
+.título{text-align: center}
+
+.imagemfolha {width: 100%;}
+
+.principal {
+	text-align: center;
+	background: grey;
+	padding:  30px;
+}
+
+#textomedio {font-size: 25px}
+
+em strong{color: #aaaaff;}
+
+strong{color: rgb(255, 0, 0);}
+
+.benefícios{
+	background: #ffffff;
+	padding: 15px;
+}
+
+ul{
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	margin-right: 10%;
+	margin-left: 20%;
+}
+
+.itens{
+	font-style: italic;
+	}
+
+.imagembeneficios{width: 30%}

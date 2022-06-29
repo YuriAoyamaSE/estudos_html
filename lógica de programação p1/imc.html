@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<h1>Calculadora de IMC</h1>
+<p>Altura (metros): 
+</p><input id="alturaEntrada">
+<p>Peso (kgs): 
+</p><input id="pesoEntrada">
+<br>
+<button>Calcular</button>
+
+<script>
+	var botao = document.querySelector("button");
+	botao.onclick = calcular;
+	function calcular() {
+		
+		var imc;
+		var peso = 0;
+		console.log(peso);
+		var altura = document.querySelector("#alturaEntrada").value;
+		peso = document.querySelector("#pesoEntrada").value;
+		console.log(peso);
+		var pesoMaximo;
+		var pesoMinimo;
+
+		function pulaLinha(){
+		   	document.write("<br>");
+		}
+
+		function mostraTexto(frase){
+			document.write(frase);
+			pulaLinha();
+		}
+
+		function calculaImc(pes,alt){
+			imc = Math.round(pes/(alt*alt)*100)/100;
+			return imc;
+		}
+
+		function classificacao(imc){
+			if(imc < 18.5){
+				return "Peso Baixo"
+			}
+			if(imc >= 18.5 && imc < 25){
+				return "Peso normal"
+			}
+			if(imc >= 25 && imc < 30){
+				return "Sobrepeso"
+			}
+			if(imc >= 30 && imc < 35){
+				return "Obesidade (Grau I)"
+			}
+			if(imc >= 35 && imc < 40){
+				return "Obesidade (Grau II)"
+			}
+			if(imc >= 40){
+				return "Obesidade (Grau III)"
+			}		
+		}
+
+		function pesoIdeal(alt){
+			pesoMinimo = Math.round(18.5 * alt * alt*100)/100;
+			pesoMaximo = Math.round(24.9 * alt * alt*100)/100;
+		}
+		pesoIdeal(altura);
+		mostraTexto("Altura: "+ altura +"m");
+		mostraTexto("Peso: " + peso + "kgs");
+		mostraTexto("IMC: " + calculaImc(peso,altura));
+		mostraTexto("Peso ideal: entre " + pesoMinimo + " kgs e " + pesoMaximo + " kgs.");
+		mostraTexto("Classificação: " + classificacao(imc));
+
+		if (classificacao(imc) != "Peso normal"){
+			if(imc >= 25){
+				mostraTexto("Aconselha-se a perder ao menos " + (Math.round(100*(peso - pesoMaximo))/100) + " kgs.");
+			} else{
+				mostraTexto("Aconselha-se a ganhar ao menos " + (pesoMinimo - peso) + " kgs.");
+			}
+		}
+	}
+
+</script>
+
